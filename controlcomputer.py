@@ -114,7 +114,7 @@ def ping_all():
         out = out.strip()
         out = out.split('\n')
 
-        if (len(out) >= 2) and (out[2][:27] == '64 bytes from {0}'.format(host)):
+        if (len(out) >= 2) and (len(out[1]) > 30) and (out[1][:27] == '64 bytes from {0}'.format(host)):
             print('{0} is online.'.format(raspi))
         else:
             print('{0} is offline.'.format(raspi))
